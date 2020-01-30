@@ -1,7 +1,9 @@
 # DUELYST Game
 
 Required libraries to run:
+
 https://github.com/josueeduardo/rest-client
+
 http://hc.apache.org/downloads.cgi, latest version
 
 Advanced Programming Course(Java)
