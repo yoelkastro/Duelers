@@ -20,8 +20,8 @@ import static server.dataCenter.DataCenter.loadFile;
 
 public class Rest implements DataBase {
 
-    private static final String ACCOUNTS_PATH = "resources/accounts";
-    private static final String CUSTOM_CARD_PATH = "resources/customCards";
+    private static final String ACCOUNTS_PATH = "Server/resources/accounts";
+    private static final String CUSTOM_CARD_PATH = "Server/resources/customCards";
     private static final String[] CARDS_PATHS = {
             "resources/heroCards",
             "resources/minionCards",
@@ -29,8 +29,8 @@ public class Rest implements DataBase {
             "resources/itemCards/collectible",
             "resources/itemCards/usable",
             CUSTOM_CARD_PATH};
-    private static final String FLAG_PATH = "resources/itemCards/flag/Flag.item.card.json";
-    private static final String STORIES_PATH = "resources/stories";
+    private static final String FLAG_PATH = "Server/resources/itemCards/flag/Flag.item.card.json";
+    private static final String STORIES_PATH = "Server/resources/stories";
 
     private enum maps {
         ORINGINAL_CARDS("originalCards"),
@@ -157,7 +157,7 @@ public class Rest implements DataBase {
                     .fields(parameters)
                     .asString();
             if (response.getStatus() == 200)
-                return JsonConverter.fromJson(response.getBody(), ArrayList.class);
+                return JsonConverter.fromJson(response.body(), ArrayList.class);
         } catch (Exception e) {
 
             e.printStackTrace();
@@ -180,7 +180,7 @@ public class Rest implements DataBase {
             response = Unirest.post(baseAddress + path)
                     .fields(parameters)
                     .asString();
-            return response.getBody();
+            return response.body();
         } catch (Exception e) {
             e.printStackTrace();
         }

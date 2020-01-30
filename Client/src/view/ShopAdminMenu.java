@@ -12,10 +12,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 class ShopAdminMenu extends Show {
-    private static final String backgroundUrl = "resources/menu/background/shop_admin_background.jpg";
+    private static final String backgroundUrl = "Client/resources/menu/background/shop_admin_background.jpg";
     private static final EventHandler<? super MouseEvent> BACK_EVENT = event -> new MainMenu().show();
     private static Media backgroundMusic = new Media(
-            new File("resources/music/shop_menu.m4a").toURI().toString()
+            new File("Client/resources/music/shop_menu.m4a").toURI().toString()
     );
     private static ShopAdminMenu menu;
 

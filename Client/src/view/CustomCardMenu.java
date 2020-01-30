@@ -39,8 +39,8 @@ import static models.gui.UIConstants.*;
 public class CustomCardMenu extends Show implements PropertyChangeListener {
     private static final EventHandler<? super MouseEvent> BACK_EVENT = event -> new MainMenu().show();
     private static final List<CardType> cardTypes = Arrays.asList(HERO, CardType.MINION, CardType.SPELL, CardType.USABLE_ITEM);
-    private static final String ICON_PATH = "resources/icons";
-    private static final String TROOPS_PATH = "resources/troopAnimations";
+    private static final String ICON_PATH = "Client/resources/icons";
+    private static final String TROOPS_PATH = "Client/resources/troopAnimations";
     private static final Map<CardType, ObservableList<String>> sprites = new HashMap<>();
     private static Media backgroundMusic = new Media(
             new File("resources/music/shop_menu.m4a").toURI().toString()

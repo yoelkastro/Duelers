@@ -12,11 +12,11 @@ public abstract class GameModeChooseMenu extends PlayMenu {
     private static final EventHandler<? super MouseEvent> BACK_EVENT = event -> PlayMenu.getInstance().show();
     private static GameModeChooseMenu menu;
     private static final PlayButtonItem[] items = {
-            new PlayButtonItem("resources/menu/playButtons/kill_hero.jpg", "KILL HERO",
+            new PlayButtonItem("Client/resources/menu/playButtons/kill_hero.jpg", "KILL HERO",
                     "You must kill opponent's hero to win", event -> menu.startKillHero()),
-            new PlayButtonItem("resources/menu/playButtons/single_flag.jpg", "SINGLE FLAG",
+            new PlayButtonItem("Client/resources/menu/playButtons/single_flag.jpg", "SINGLE FLAG",
                     "You must keep the flag for 6 turns to win", event -> menu.startSingleFlag()),
-            new PlayButtonItem("resources/menu/playButtons/multi_flag.jpg", "MULTI FLAG",
+            new PlayButtonItem("Client/resources/menu/playButtons/multi_flag.jpg", "MULTI FLAG",
                     "You must collect at least half the flags to win", event -> menu.startMultiFlag())
     };
 

@@ -21,7 +21,7 @@ public class BackButton extends ImageView {
 
     static {
         try {
-            IMAGE = new Image(new FileInputStream("resources/ui/button_back.png"));
+            IMAGE = new Image(new FileInputStream("Client/resources/ui/button_back.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

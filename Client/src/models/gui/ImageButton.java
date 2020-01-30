@@ -23,8 +23,8 @@ public class ImageButton extends StackPane {
 
     static {
         try {
-            primaryDefault = new Image(new FileInputStream("resources/ui/button_primary@2x.png"));
-            primaryHover = new Image(new FileInputStream("resources/ui/button_primary_glow@2x.png"));
+            primaryDefault = new Image(new FileInputStream("Client/resources/ui/button_primary@2x.png"));
+            primaryHover = new Image(new FileInputStream("Client/resources/ui/button_primary_glow@2x.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

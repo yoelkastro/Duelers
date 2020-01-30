@@ -1,15 +1,17 @@
 package jsonMaker;
 
-import server.detaCenter.models.card.AttackType;
-import server.detaCenter.models.card.Card;
-import server.detaCenter.models.card.CardType;
-import server.detaCenter.models.card.spell.*;
+import server.dataCenter.models.card.AttackType;
+import server.dataCenter.models.card.Card;
+import server.dataCenter.models.card.CardType;
+import server.dataCenter.models.card.spell.*;
 import server.gameCenter.models.map.Position;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.google.gson.GsonBuilder;
 
 public class CardMaker {
     private static Scanner scanner = new Scanner(System.in);

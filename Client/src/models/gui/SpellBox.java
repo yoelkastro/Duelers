@@ -38,7 +38,7 @@ public class SpellBox extends HBox {
 
     static {
         try {
-            removeIcon = new Image(new FileInputStream("resources/ui/icon_remove.png"));
+            removeIcon = new Image(new FileInputStream("Client/resources/ui/icon_remove.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

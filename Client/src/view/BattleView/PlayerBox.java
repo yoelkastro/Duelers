@@ -31,15 +31,15 @@ import static view.BattleView.Constants.SCALE;
 import static view.BattleView.Constants.SCREEN_WIDTH;
 
 public class PlayerBox implements PropertyChangeListener {
-    private final Image comboNotSelectedImage = new Image(new FileInputStream("resources/ui/ranked_chevron_empty@2x.png"));
-    private final Image comboSelectedImage = new Image(new FileInputStream("resources/ui/ranked_chevron_full@2x.png"));
-    private final Image spellSelectedImage = new Image(new FileInputStream("resources/ui/quests_glow@2x.png"));
-    private final Image spellNotSelectedImage = new Image(new FileInputStream("resources/ui/quests@2x.png"));
-    private final Image manaImage = new Image(new FileInputStream("resources/ui/icon_mana@2x.png"));
-    private final Image inActiveManaImage = new Image(new FileInputStream("resources/ui/icon_mana_inactive@2x.png"));
-    private final Image player1Profile = new Image(new FileInputStream("resources/photo/general_portrait_image_hex_f5@2x.png"));
-    private final Image player2Profile = new Image(new FileInputStream("resources/photo/general_portrait_image_hex_f6-third@2x.png"));
-    private final Image chatImage = new Image(new FileInputStream("resources/ui/chat_bubble.png"));
+    private final Image comboNotSelectedImage = new Image(new FileInputStream("Client/resources/ui/ranked_chevron_empty@2x.png"));
+    private final Image comboSelectedImage = new Image(new FileInputStream("Client/resources/ui/ranked_chevron_full@2x.png"));
+    private final Image spellSelectedImage = new Image(new FileInputStream("Client/resources/ui/quests_glow@2x.png"));
+    private final Image spellNotSelectedImage = new Image(new FileInputStream("Client/resources/ui/quests@2x.png"));
+    private final Image manaImage = new Image(new FileInputStream("Client/resources/ui/icon_mana@2x.png"));
+    private final Image inActiveManaImage = new Image(new FileInputStream("Client/resources/ui/icon_mana_inactive@2x.png"));
+    private final Image player1Profile = new Image(new FileInputStream("Client/resources/photo/general_portrait_image_hex_f5@2x.png"));
+    private final Image player2Profile = new Image(new FileInputStream("Client/resources/photo/general_portrait_image_hex_f6-third@2x.png"));
+    private final Image chatImage = new Image(new FileInputStream("Client/resources/ui/chat_bubble.png"));
     private final double CHAT_BUBBLE_SIZE = 150 * SCALE;
     private final NormalField chatField = new NormalField("Type message and send");
     private final BattleScene battleScene;
@@ -177,7 +177,7 @@ public class PlayerBox implements PropertyChangeListener {
     }
 
     private void addSpellButton() throws Exception {
-        spellButton = new ImageView(new Image(new FileInputStream("resources/ui/quests@2x.png")));
+        spellButton = new ImageView(new Image(new FileInputStream("Client/resources/ui/quests@2x.png")));
         spellButton.setFitWidth(spellButton.getImage().getWidth() * SCALE * 0.75);
         spellButton.setFitHeight(spellButton.getImage().getHeight() * SCALE * 0.75);
         spellButton.setY(SCALE * (325));

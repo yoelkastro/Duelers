@@ -23,7 +23,7 @@ import static models.account.AccountType.ADMIN;
 public class MainMenu extends Show {
     private static MainMenu menu;
     private static Media backgroundMusic = new Media(
-            new File("resources/music/main_menu.m4a").toURI().toString()
+            new File("Client/resources/music/main_menu.m4a").toURI().toString()
     );
     private final List<MenuItem> items = new ArrayList<>();
     private int itemIndex = 0;

@@ -49,12 +49,12 @@ public class DeckBox extends GridPane {
 
     static {
         try {
-            checkIcon = new Image(new FileInputStream("resources/ui/icon_check.png"));
-            modifyIcon = new Image(new FileInputStream("resources/ui/icon_modify.png"));
-            removeIcon = new Image(new FileInputStream("resources/ui/icon_remove.png"));
-            saveIcon = new Image(new FileInputStream("resources/ui/icon_save.png"));
-            mainIcon = new Image(new FileInputStream("resources/ui/icon_main_deck.png"));
-            disableMainIcon = new Image(new FileInputStream("resources/ui/icon_main_deck_disable.png"));
+            checkIcon = new Image(new FileInputStream("Client/resources/ui/icon_check.png"));
+            modifyIcon = new Image(new FileInputStream("Client/resources/ui/icon_modify.png"));
+            removeIcon = new Image(new FileInputStream("Client/resources/ui/icon_remove.png"));
+            saveIcon = new Image(new FileInputStream("Client/resources/ui/icon_save.png"));
+            mainIcon = new Image(new FileInputStream("Client/resources/ui/icon_main_deck.png"));
+            disableMainIcon = new Image(new FileInputStream("Client/resources/ui/icon_main_deck_disable.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

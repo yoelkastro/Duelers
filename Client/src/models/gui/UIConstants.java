@@ -35,12 +35,12 @@ public class UIConstants {
     public static final double SCENE_WIDTH = DEFAULT_SCENE_WIDTH * SCALE;
     public static final double SCENE_HEIGHT = DEFAULT_SCENE_HEIGHT * SCALE;
     public static Cursor DEFAULT_CURSOR;
-    static Cursor SELECT_CURSOR;
-
-    static {
-        try {
-            DEFAULT_CURSOR = new ImageCursor(new Image(new FileInputStream("resources/cursors/default.png")));
-            SELECT_CURSOR = new ImageCursor(new Image(new FileInputStream("resources/cursors/select.png")));
+    public static Cursor SELECT_CURSOR;
+    
+    static{
+    	try {
+            UIConstants.DEFAULT_CURSOR = new ImageCursor(new Image(new FileInputStream("Client/resources/cursors/default.png")));
+            UIConstants.SELECT_CURSOR = new ImageCursor(new Image(new FileInputStream("Client/resources/cursors/select.png")));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

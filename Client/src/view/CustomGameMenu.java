@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 class CustomGameMenu extends GameModeChooseMenu {
-    private static final String BACKGROUND_URL = "resources/menu/background/custom_game_background.jpg";
+    private static final String BACKGROUND_URL = "Client/resources/menu/background/custom_game_background.jpg";
     private static CustomGameMenu menu;
 
     private String[] deckNames;

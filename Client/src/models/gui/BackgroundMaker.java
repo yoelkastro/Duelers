@@ -11,11 +11,11 @@ import java.util.HashMap;
 import static models.gui.UIConstants.SCALE;
 
 public class BackgroundMaker {
-    private static final String BACKGROUND_URL = "resources/menu/background/background.jpg";
-    private static final String FOREGROUND_URL = "resources/menu/background/foreground.png";
-    private static final String FAR_PILLAR_URL = "resources/menu/background/far_pillars.png";
-    private static final String NEAR_PILLAR_URL = "resources/menu/background/near_pillars.png";
-    private static final String VIGNETTE_URL = "resources/menu/background/vignette.png";
+    private static final String BACKGROUND_URL = "Client/resources/menu/background/background.jpg";
+    private static final String FOREGROUND_URL = "Client/resources/menu/background/foreground.png";
+    private static final String FAR_PILLAR_URL = "Client/resources/menu/background/far_pillars.png";
+    private static final String NEAR_PILLAR_URL = "Client/resources/menu/background/near_pillars.png";
+    private static final String VIGNETTE_URL = "Client/resources/menu/background/vignette.png";
     private static final double FOREGROUND_WIDTH = 2400 * SCALE;
     private static final double FOREGROUND_HEIGHT = 726 * SCALE;
     private static final double NEAR_PILLARS_WIDTH = 2000 * SCALE;

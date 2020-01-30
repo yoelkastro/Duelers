@@ -45,7 +45,7 @@ public class MapBox implements PropertyChangeListener {
     private DefaultLabel[][] flagLabels = new DefaultLabel[5][9];
     private StackPane[][] flagPanes = new StackPane[5][9];
     private HashMap<String, CardAnimation> collectibleItems = new HashMap<>();
-    private Image flag = new Image(new FileInputStream("resources/ui/flag.png"));
+    private Image flag = new Image(new FileInputStream("Client/resources/ui/flag.png"));
 
     MapBox(BattleScene battleScene, CompressedGameMap gameMap, double x, double y) throws Exception {
         this.battleScene = battleScene;

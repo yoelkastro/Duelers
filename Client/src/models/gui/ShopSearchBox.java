@@ -17,7 +17,7 @@ import static models.gui.UIConstants.SCALE;
 
 public class ShopSearchBox extends HBox implements PropertyChangeListener {
     private static final double ICON_SIZE = 50 * SCALE;
-    private static final String GOLD_ICON_URL = "resources/ui/icon_gold.png";
+    private static final String GOLD_ICON_URL = "Client/resources/ui/icon_gold.png";
     private final DefaultLabel money;
     private final SearchField searchField;
 

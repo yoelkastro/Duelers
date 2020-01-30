@@ -23,7 +23,7 @@ class Cloud extends Pane {
     Cloud() throws FileNotFoundException {
         for (int i = 0; i < 3; i++) {
             getChildren().add(ImageLoader.loadImage(
-                    "resources/particles/cloud_" + i + ".png",
+                    "Client/resources/particles/cloud_" + i + ".png",
                     WIDTH, HEIGHT, DISTANCE * i, 0
             ));
         }

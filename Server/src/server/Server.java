@@ -24,13 +24,13 @@ import java.util.Set;
 
 public class Server {
     private static Server server;
-    public final String serverName;
+    public static String serverName;
 
-    private final Queue<Message> sendingMessages = new LinkedList<>();
-    private final Queue<Message> receivingMessages = new LinkedList<>();
+    private final static Queue<Message> sendingMessages = new LinkedList<>();
+    private final static Queue<Message> receivingMessages = new LinkedList<>();
 
     private Server(String serverName) {
-        this.serverName = serverName;
+        Server.serverName = serverName;
         serverPrint("Server Was Created!");
     }
 
@@ -38,12 +38,8 @@ public class Server {
         return server;
     }
 
-    public static void main(String[] args) {
-        server = new Server("Server");
-        server.start();
-    }
-
-    private void start() {
+    public static void start() {
+    	server = new Server("Server");
         DataCenter.getInstance().run();//no thread
         GameCenter.getInstance().start();
         ClientPortal.getInstance().start();
@@ -90,21 +86,21 @@ public class Server {
         }).start();
     }
 
-    public void addToSendingMessages(Message message) {
+    public static void addToSendingMessages(Message message) {
         synchronized (sendingMessages) {
             sendingMessages.add(message);
             sendingMessages.notify();
         }
     }
 
-    public void addToReceivingMessages(Message message) {
+    public static void addToReceivingMessages(Message message) {
         synchronized (receivingMessages) {
             receivingMessages.add(message);
             receivingMessages.notify();
         }
     }
 
-    private void receiveMessage(Message message) {
+    private static void receiveMessage(Message message) {
         try {
             if (message == null) {
                 throw new ServerException("NULL Message");
@@ -264,17 +260,18 @@ public class Server {
         }
     }
 
-    private void sendException(String exceptionString, String receiver) {
+    private static void sendException(String exceptionString, String receiver) {
         addToSendingMessages(Message.makeExceptionMessage(receiver, exceptionString));
     }
 
-    private void sendStories(Message message) throws LogicException {
+    private static void sendStories(Message message) throws LogicException {
+    	Story[] s = new Story[DataCenter.getInstance().getStories().size()];
         DataCenter.getInstance().loginCheck(message);
         addToSendingMessages(Message.makeStoriesCopyMessage(message.getSender(),
-                DataCenter.getInstance().getStories().toArray(Story[]::new)));
+                DataCenter.getInstance().getStories().toArray(s)));
     }
 
-    private void sendOnlineGames(Message message) throws LogicException {
+    private static void sendOnlineGames(Message message) throws LogicException {
         DataCenter.getInstance().loginCheck(message);
         Account account = DataCenter.getInstance().getClients().get(message.getSender());
         if (account.getAccountType() != AccountType.ADMIN)
@@ -283,23 +280,23 @@ public class Server {
         addToSendingMessages(Message.makeOnlineGamesCopyMessage(message.getSender(), onlines));
     }
 
-    private void sendOriginalCards(Message message) throws LogicException {
+    private static void sendOriginalCards(Message message) throws LogicException {
         DataCenter.getInstance().loginCheck(message);
         addToSendingMessages(Message.makeOriginalCardsCopyMessage(message.getSender(), DataCenter.getInstance().getOriginalCards()));
     }
 
-    private void sendCustomCards(Message message) throws LogicException {
+    private static void sendCustomCards(Message message) throws LogicException {
         DataCenter.getInstance().loginCheck(message);
         addToSendingMessages(Message.makeCustomCardsCopyMessage(message.getSender(), DataCenter.getInstance().getNewCustomCards()));
 
     }
 
-    private void sendLeaderBoard(Message message) throws ClientException { //Check
+    private static void sendLeaderBoard(Message message) throws ClientException { //Check
         addToSendingMessages(Message.makeLeaderBoardCopyMessage(message.getSender(),
                 DataCenter.getInstance().getLeaderBoard()));
     }
 
-    private void selectUserForMultiPlayer(Message message) throws ClientException {
+    private static void selectUserForMultiPlayer(Message message) throws ClientException {
         Account account = DataCenter.getInstance().getAccount(message.getNewGameFields().getOpponentUsername());
         if (account == null) {
             throw new ClientException("second player is not valid");
@@ -310,7 +307,7 @@ public class Server {
         }
     }
 
-    private void sudo(Message message) {
+    private static void sudo(Message message) {
         String command = message.getOtherFields().getSudoCommand().toLowerCase();
         if (command.contains("account")) {
             for (Account account : DataCenter.getInstance().getAccounts().keySet()) {
@@ -405,7 +402,7 @@ public class Server {
         }
     }
 
-    public void serverPrint(String string) {
+    public static void serverPrint(String string) {
         System.out.println("\u001B[32m" + string.trim() + "\u001B[0m");
     }
 

@@ -1,6 +1,11 @@
 package controller;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
@@ -67,7 +72,7 @@ public class GraphicalUserInterface {
 
     private void makeScene(AnchorPane root) {
         scene = new Scene(root, UIConstants.SCENE_WIDTH, UIConstants.SCENE_HEIGHT);
-        scene.getStylesheets().add(this.getClass().getResource("/styles/scroll_pane.css").toExternalForm());
+        //scene.getStylesheets().add(this.getClass().getResource("Client/resources/styles/scroll_pane.css").toExternalForm());
         scene.setCursor(UIConstants.DEFAULT_CURSOR);
         stage.setScene(scene);
     }

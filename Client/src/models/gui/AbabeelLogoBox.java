@@ -18,7 +18,7 @@ import java.io.FileNotFoundException;
 import static models.gui.UIConstants.SCALE;
 
 class AbabeelLogoBox extends VBox {
-    private static final String ABABEEL_URL = "resources/ui/logo.png";
+    private static final String ABABEEL_URL = "Client/resources/ui/logo.png";
     private static final Paint ABABEEL_TEXT_COLOR = Color.rgb(102, 166, 214);
     private static final Font FONT = Font.font("SansSerif", FontWeight.EXTRA_BOLD, 40 * SCALE);
     private static final Background ABABEEL_BACKGROUND = new Background(

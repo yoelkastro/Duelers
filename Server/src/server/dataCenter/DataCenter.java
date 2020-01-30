@@ -27,17 +27,17 @@ import java.io.*;
 import java.util.*;
 
 public class DataCenter extends Thread {
-    private static final String ACCOUNTS_PATH = "resources/accounts";
-    private static final String CUSTOM_CARD_PATH = "resources/customCards";
+    private static final String ACCOUNTS_PATH = "Server/resources/accounts";
+    private static final String CUSTOM_CARD_PATH = "Server/resources/customCards";
     private static final String[] CARDS_PATHS = {
-            "resources/heroCards",
-            "resources/minionCards",
-            "resources/spellCards",
-            "resources/itemCards/collectible",
-            "resources/itemCards/usable",
+            "Server/resources/heroCards",
+            "Server/resources/minionCards",
+            "Server/resources/spellCards",
+            "Server/resources/itemCards/collectible",
+            "Server/resources/itemCards/usable",
             CUSTOM_CARD_PATH};
-    private static final String FLAG_PATH = "resources/itemCards/flag/Flag.item.card.json";
-    private static final String STORIES_PATH = "resources/stories";
+    private static final String FLAG_PATH = "Server/resources/itemCards/flag/Flag.item.card.json";
+    private static final String STORIES_PATH = "Server/resources/stories";
 
     private static DataCenter ourInstance = new DataCenter();
 
@@ -280,7 +280,8 @@ public class DataCenter extends Thread {
         if (accounts.size() == 0) {
             throw new ClientException("leader board is empty");
         }
-        Account[] leaderBoard = accounts.keySet().toArray(Account[]::new);
+        Account[] a = new Account[accounts.keySet().size()];
+        Account[] leaderBoard = accounts.keySet().toArray(a);
         Arrays.sort(leaderBoard, new LeaderBoardSorter());
         return leaderBoard;
     }
@@ -368,6 +369,7 @@ public class DataCenter extends Thread {
         File[] files = new File(ACCOUNTS_PATH).listFiles();
         if (files != null) {
             for (File file : files) {
+            	System.out.println(file.getName());
                 TempAccount account = loadFile(file, TempAccount.class);
                 if (account == null) continue;
                 Account newAccount = new Account(account);

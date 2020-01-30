@@ -11,10 +11,10 @@ import static models.gui.UIConstants.SCALE;
 
 public class ProfileGrid extends GridPane {
     private static final double ICON_SIZE = 70 * SCALE;
-    private static final String DEFAULT_PROFILE_PIC_URL = "resources/ui/default_profile.jpg";
-    private static final String GENERAL_ICON_URL = "resources/ui/icon_general.png";
-    private static final String GOLD_ICON_URL = "resources/ui/icon_gold.png";
-    private static final String HISTORY_ICON_URL = "resources/ui/icon_history.png";
+    private static final String DEFAULT_PROFILE_PIC_URL = "Client/resources/ui/default_profile.jpg";
+    private static final String GENERAL_ICON_URL = "Client/resources/ui/icon_general.png";
+    private static final String GOLD_ICON_URL = "Client/resources/ui/icon_gold.png";
+    private static final String HISTORY_ICON_URL = "Client/resources/ui/icon_history.png";
     private static final String USERNAME_TEXT = "Username:";
     private static final String MONEY_TEXT = "Your Money:";
     private static final String MATCH_HISTORY_TEXT = "Match Histories:";

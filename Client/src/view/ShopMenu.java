@@ -31,7 +31,7 @@ public class ShopMenu extends Show implements PropertyChangeListener {
     private static final double SCROLL_WIDTH = 2350 * SCALE;
     private static final double SCROLL_HEIGHT = SCENE_HEIGHT - DEFAULT_SPACING * 13;
     private static Media backgroundMusic = new Media(
-            new File("resources/music/shop_menu.m4a").toURI().toString()
+            new File("Client/resources/music/shop_menu.m4a").toURI().toString()
     );
     private static ShopMenu menu;
     private static final EventHandler<? super MouseEvent> BACK_EVENT = event -> {

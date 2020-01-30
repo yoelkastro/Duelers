@@ -37,13 +37,13 @@ public class HandBox implements PropertyChangeListener {
     private int selectedCard = -1;
     private int selectedItem = -1;
     private CardPane cardPane = null;
-    private Image cardBack = new Image(new FileInputStream("resources/ui/card_background@2x.png"));
-    private Image cardBackGlow = new Image(new FileInputStream("resources/ui/card_background_highlight@2x.png"));
-    private Image nextBack = new Image(new FileInputStream("resources/ui/replace_background@2x.png"));
-    private Image nextRingSmoke = new Image(new FileInputStream("resources/ui/replace_outer_ring_smoke@2x.png"));
-    private Image nextRingShine = new Image(new FileInputStream("resources/ui/replace_outer_ring_shine@2x.png"));
-    private Image endTurnImage = new Image(new FileInputStream("resources/ui/button_end_turn_finished@2x.png"));
-    private Image endTurnImageGlow = new Image(new FileInputStream("resources/ui/button_end_turn_finished_glow@2x.png"));
+    private Image cardBack = new Image(new FileInputStream("Client/resources/ui/card_background@2x.png"));
+    private Image cardBackGlow = new Image(new FileInputStream("Client/resources/ui/card_background_highlight@2x.png"));
+    private Image nextBack = new Image(new FileInputStream("Client/resources/ui/replace_background@2x.png"));
+    private Image nextRingSmoke = new Image(new FileInputStream("Client/resources/ui/replace_outer_ring_smoke@2x.png"));
+    private Image nextRingShine = new Image(new FileInputStream("Client/resources/ui/replace_outer_ring_shine@2x.png"));
+    private Image endTurnImage = new Image(new FileInputStream("Client/resources/ui/button_end_turn_finished@2x.png"));
+    private Image endTurnImageGlow = new Image(new FileInputStream("Client/resources/ui/button_end_turn_finished_glow@2x.png"));
     private DefaultLabel endTurnLabel;
     private StackPane endTurnButton;
 
@@ -308,14 +308,14 @@ public class HandBox implements PropertyChangeListener {
                             battleScene.getController().exitGameShow(new OnlineGame(battleScene.getGame()));
                             new MainMenu().show();
                 },
-                        new Image(new FileInputStream("resources/ui/button_primary_left@2x.png")),
-                        new Image(new FileInputStream("resources/ui/button_primary_left_glow@2x.png"))
+                        new Image(new FileInputStream("Client/resources/ui/button_primary_left@2x.png")),
+                        new Image(new FileInputStream("Client/resources/ui/button_primary_left_glow@2x.png"))
                 );
             } else {
                 imageButton = new ImageButton(
                         "FINISH", event -> battleScene.getController().forceFinish(),
-                        new Image(new FileInputStream("resources/ui/button_primary_left@2x.png")),
-                        new Image(new FileInputStream("resources/ui/button_primary_left_glow@2x.png"))
+                        new Image(new FileInputStream("Client/resources/ui/button_primary_left@2x.png")),
+                        new Image(new FileInputStream("Client/resources/ui/button_primary_left_glow@2x.png"))
                 );
             }
             imageButton.setLayoutX(1360 * Constants.SCALE);
@@ -331,8 +331,8 @@ public class HandBox implements PropertyChangeListener {
         try {
             ImageButton imageButton = new ImageButton(
                     "GRAVEYARD", event -> showGraveyard(),
-                    new Image(new FileInputStream("resources/ui/button_primary_right@2x.png")),
-                    new Image(new FileInputStream("resources/ui/button_primary_right_glow@2x.png"))
+                    new Image(new FileInputStream("Client/resources/ui/button_primary_right@2x.png")),
+                    new Image(new FileInputStream("Client/resources/ui/button_primary_right_glow@2x.png"))
             );
             imageButton.setLayoutX(1530 * Constants.SCALE);
             imageButton.setLayoutY(110 * Constants.SCALE);

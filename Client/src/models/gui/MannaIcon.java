@@ -19,7 +19,7 @@ class MannaIcon extends StackPane {
 
     static {
         try {
-            mannaIcon = new Image(new FileInputStream("resources/ui/icon_mana@2x.png"));
+            mannaIcon = new Image(new FileInputStream("Client/resources/ui/icon_mana@2x.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

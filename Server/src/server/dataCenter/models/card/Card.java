@@ -49,7 +49,22 @@ public class Card {
         this.range = referenceCard.range;
     }
 
-    public CompressedCard toCompressedCard() {
+    public Card(String name, String description, CardType cardType, ArrayList<Spell> spells, int defaultAp,
+			int defaultHp, int mannaPoint, int price, AttackType attackType, int range, boolean hasCombo) {
+		this.name = name;
+		this.description = description;
+		this.type = cardType;
+		this.spells = spells;
+		this.defaultAp = defaultAp;
+		this.defaultHp = defaultHp;
+		this.mannaPoint = mannaPoint;
+		this.price = price;
+		this.attackType = attackType;
+		this.range = range;
+		this.hasCombo = hasCombo;
+	}
+
+	public CompressedCard toCompressedCard() {
         return new CompressedCard(
                 name, description, cardId,
                 spriteName, type, spells,
