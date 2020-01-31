@@ -27,7 +27,7 @@ public class Account {
     public Account(String username, String password) {
         this.username = username;
         this.password = password;
-        this.money = 15000;
+        this.money = 9999999;
         this.collection = new Collection();
         this.accountType = NORMAL;
     }
